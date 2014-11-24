@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--<meta http-equiv="refresh" content="11;url=http://www.baidu.com">-->
+		<meta name="keywords" content="net,enterprise,ERP,java" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<script>
+			//随机显示TITLE
+			var til = new Array(5);
+			til[0] = '第一个标题'
+			til[1] = '第二个标题'
+			til[2] = '第三个标题'
+			til[3] = '第四个标题'
+			til[4] = '第五个标题'
+			var indextitle = Math.floor(Math.random() * til.length); //获取一个随机整数
+			onload = function chaTitle() {
+				var curTitle = til[indextitle]; //获取数组中的指定项
+				window.document.title += " - " + curTitle; //更改当前页的标题
+			}
+
+			function keyLogin() {
+				if (event.keyCode == 13) //回车键的键值为13
+					document.getElementById("input1").click(); //调用登录按钮的登录事件
+			}
+
+			function del() {
+				if (confirm("确实要删除吗?"))
+					console.log("已经删除！");
+				else
+					console.log("已经取消了删除操作");
+				this.disabled = true;
+			}
+		</script>
+		<style type="text/css">
+			/*#txt1:focus{
+				border: none;
+				color: red;
+			}*/
+		</style>
+	</head>
+
+	<body onload="self.status='欢迎'">
+
+		<form action="http://www.google.com" method="get" name="form1">
+			<input type="button" value="删除" onclick="del(this);this.disabled=true;">
+			<input type="submit" value="提交（Ctrl+S）" accesskey="S">
+			<input type="button" value="刷新" onclick="document.location.reload();">只有下划线的输入框
+			<input type="text" id="txt1" name="txt1" size="25" style=" border:1px; border-bottom-style: solid;border-top-style: none;border-left-style:none;border-right-style:none;">
+			<br />默认的输入框
+			<input id="Text1" size="25" type="text" />
+
+		</form>
+
+
+
+	</body>
+
+</html>
